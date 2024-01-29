@@ -15,7 +15,7 @@ services:
     # If you really want to use MySQL, uncomment the following line
     image: mysql
     environment:
-      - MYSQL_DATABASE=example
+      - MYSQL_DATABASE=veloxia
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
     restart: always
     healthcheck:
