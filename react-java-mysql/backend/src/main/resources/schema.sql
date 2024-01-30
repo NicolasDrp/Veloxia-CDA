@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS Modele (
     nom_modele VARCHAR(50) NOT NULL,
     portes INT NOT NULL,
     prix_modele INT NOT NULL,
-    email_utilisateur VARCHAR(255) UNIQUE NOT NULL
 );
 
 -- Création de la table `Voiture`
