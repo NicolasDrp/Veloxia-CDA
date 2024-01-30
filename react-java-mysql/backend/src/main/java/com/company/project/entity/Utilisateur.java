@@ -11,25 +11,26 @@ import javax.persistence.Table;
 @Table(name = "Utilisateur")
 public class Utilisateur {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_utilisateur",nullable = false)
-    private Long idUtilisateur;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_utilisateur", nullable = false)
+	private Long idUtilisateur;
 
-    @Column(name = "prenom_utilisateur",nullable = false)
-    private String prenomUtilisateur;
+	@Column(name = "prenom_utilisateur", nullable = false)
+	private String prenomUtilisateur;
 
-    @Column(name = "nom_utilisateur",nullable = false)
-    private String nomUtilisateur;
+	@Column(name = "nom_utilisateur", nullable = false)
+	private String nomUtilisateur;
 
-    @Column(name = "mot_de_passe",nullable = false)
-    private String motDePasse;
+	@Column(name = "mot_de_passe", nullable = false)
+	private String motDePasse;
 
-    @Column(name = "email_utilisateur", unique = true,nullable = false)
-    private String emailUtilisateur;
+	@Column(name = "email_utilisateur", unique = true, nullable = false)
+	private String emailUtilisateur;
 
-    public Utilisateur() {
-    }
+	public Utilisateur() {
+		super();
+	}
 
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
@@ -70,8 +71,5 @@ public class Utilisateur {
 	public void setEmailUtilisateur(String emailUtilisateur) {
 		this.emailUtilisateur = emailUtilisateur;
 	}
-    
-    
-
 
 }

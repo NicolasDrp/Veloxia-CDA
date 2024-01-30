@@ -29,6 +29,7 @@ public class Voiture {
 	private Modele modele;
 
 	public Voiture() {
+		super();
 	}
 
 	public Long getIdVoiture() {
