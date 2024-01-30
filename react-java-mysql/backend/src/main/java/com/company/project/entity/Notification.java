@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +26,7 @@ public class Notification {
 	@Column(name = "date_envoie", nullable = false)
 	private Date dateEnvoie;
 
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "id_commande", nullable = false)
 	private Commande idCommande;
 

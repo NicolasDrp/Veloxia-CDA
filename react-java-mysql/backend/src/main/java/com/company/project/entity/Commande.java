@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -29,11 +29,11 @@ public class Commande {
 	@JoinColumn(name = "id_voiture", nullable = false)
 	private Voiture voiture;
 
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "id_utilisateur", nullable = false)
 	private Utilisateur utilisateur;
 
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "id_concessionnaire", nullable = false)
 	private Concessionnaire concessionnaire;
 
