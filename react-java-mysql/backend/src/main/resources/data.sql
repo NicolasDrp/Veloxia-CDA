@@ -1,1 +1,1 @@
-INSERT INTO example.greetings(name) values ('Docker');
+INSERT INTO veloxia.greetings(name) values ('Docker');
