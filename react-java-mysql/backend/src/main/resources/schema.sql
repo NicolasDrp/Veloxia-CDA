@@ -23,13 +23,14 @@ CREATE TABLE IF NOT EXISTS Modele (
     id_modele INT AUTO_INCREMENT PRIMARY KEY,
     nom_modele VARCHAR(50) NOT NULL,
     portes INT NOT NULL,
-    prix_modele INT NOT NULL,
+    prix_modele INT NOT NULL
 );
 
 -- Création de la table `Voiture`
 CREATE TABLE IF NOT EXISTS Voiture (
     id_voiture INT AUTO_INCREMENT PRIMARY KEY,
     couleur_voiture VARCHAR(20) NOT NULL,
+    id_modele INT NOT NULL,
     FOREIGN KEY (id_modele) REFERENCES Modele(id_modele)
 );
 
@@ -38,6 +39,9 @@ CREATE TABLE IF NOT EXISTS Commande (
     id_commande INT AUTO_INCREMENT PRIMARY KEY,
     status VARCHAR(100) NOT NULL,
     date_livraison DATE NOT NULL,
+    id_voiture INT NOT NULL ,
+    id_utilisateur INT NOT NULL,
+    id_concessionnaire INT NOT NULL,
     FOREIGN KEY (id_voiture) REFERENCES Voiture(id_voiture),
     FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur),
     FOREIGN KEY (id_concessionnaire) REFERENCES Concessionnaire(id_concessionnaire)
@@ -48,5 +52,6 @@ CREATE TABLE IF NOT EXISTS Notification (
     id_notification INT AUTO_INCREMENT PRIMARY KEY,
     message TEXT NOT NULL,
     date_envoie DATE NOT NULL,
+    id_commande INT NOT NULL ,
     FOREIGN KEY (id_commande) REFERENCES Commande(id_commande)
 );
