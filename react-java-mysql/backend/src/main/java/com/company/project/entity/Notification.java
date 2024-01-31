@@ -65,5 +65,4 @@ public class Notification {
 	public void setIdCommande(Commande idCommande) {
 		this.idCommande = idCommande;
 	}
-
 }
