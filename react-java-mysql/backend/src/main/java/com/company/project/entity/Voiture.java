@@ -1,5 +1,7 @@
 package com.company.project.entity;
 
+import com.company.project.service.fabrique.Vehicule;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,57 +13,58 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Voiture")
-public class Voiture {
+public class Voiture implements Vehicule {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_voiture", nullable = false)
-	private Long idVoiture;
 
-	@Column(name = "couleur_voiture", nullable = false)
-	private String couleurVoiture;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_voiture", nullable = false)
+    private Long idVoiture;
 
-	@Column(name = "nom_utilisateur", nullable = false)
-	private String nomUtilisateur;
+    @Column(name = "couleur_voiture", nullable = false)
+    private String couleurVoiture;
 
-	@ManyToOne
-	@JoinColumn(name = "id_modele", nullable = false)
-	private Modele modele;
+    @Column(name = "nom_utilisateur", nullable = false)
+    private String nomUtilisateur;
 
-	public Voiture() {
-		super();
-	}
+    @ManyToOne
+    @JoinColumn(name = "id_modele", nullable = false)
+    private Modele modele;
 
-	public Long getIdVoiture() {
-		return idVoiture;
-	}
+    public Voiture() {
+        super();
+    }
 
-	public void setIdVoiture(Long idVoiture) {
-		this.idVoiture = idVoiture;
-	}
+    public Long getIdVoiture() {
+        return idVoiture;
+    }
 
-	public String getCouleurVoiture() {
-		return couleurVoiture;
-	}
+    public void setIdVoiture(Long idVoiture) {
+        this.idVoiture = idVoiture;
+    }
 
-	public void setCouleurVoiture(String couleurVoiture) {
-		this.couleurVoiture = couleurVoiture;
-	}
+    public String getCouleurVoiture() {
+        return couleurVoiture;
+    }
 
-	public String getNomUtilisateur() {
-		return nomUtilisateur;
-	}
+    public void setCouleurVoiture(String couleurVoiture) {
+        this.couleurVoiture = couleurVoiture;
+    }
 
-	public void setNomUtilisateur(String nomUtilisateur) {
-		this.nomUtilisateur = nomUtilisateur;
-	}
+    public String getNomUtilisateur() {
+        return nomUtilisateur;
+    }
 
-	public Modele getModele() {
-		return modele;
-	}
+    public void setNomUtilisateur(String nomUtilisateur) {
+        this.nomUtilisateur = nomUtilisateur;
+    }
 
-	public void setModele(Modele modele) {
-		this.modele = modele;
-	}
+    public Modele getModele() {
+        return modele;
+    }
+
+    public void setModele(Modele modele) {
+        this.modele = modele;
+    }
 
 }
