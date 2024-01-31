@@ -88,8 +88,5 @@ public class Commande {
 	public void setConcessionnaire(Concessionnaire concessionnaire) {
 		this.concessionnaire = concessionnaire;
 	}
-	
-	
-	
 
 }
