@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.company.project.entity.Commande;
 import com.company.project.entity.Notification;
-import com.company.project.repository.CommandeRepository;
 import com.company.project.repository.NotificationRepository;
 import com.company.project.service.observateur.EventListener;
 import com.company.project.service.observateur.EventManager;
@@ -43,6 +42,10 @@ public class NotificationService implements EventListener {
 
 	public Notification recupererNotificationParId(int id) {
 		return notificationRepository.findById(id).orElse(null);
+	}
+
+	public void supprimerNotification(Notification notification) {
+		notificationRepository.delete(notification);
 	}
 
 }

@@ -9,23 +9,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class CommandeService {
 
-    private final CommandeRepository commandeRepository;
-    
-    public EventManager evenement;
+	private final CommandeRepository commandeRepository;
 
-    @Autowired
-    public CommandeService(CommandeRepository commandeRepository) {
-        this.commandeRepository = commandeRepository;
-        this.evenement = new EventManager("creation", "status", "date");
-    }
+	public EventManager evenement;
 
-    public Commande creerCommande(Commande commande) {
-        Commande nouvelleCommande = commandeRepository.save(commande);
-        evenement.notifier("creation", nouvelleCommande);
-        return nouvelleCommande;
-    }
+	@Autowired
+	public CommandeService(CommandeRepository commandeRepository) {
+		this.commandeRepository = commandeRepository;
+		this.evenement = new EventManager("creation", "status", "date");
+	}
 
-    public Commande recupererCommandeParId(int id) {
-        return commandeRepository.findById(id).orElse(null);
-    }
+	public Commande creerCommande(Commande commande) {
+		commandeRepository.save(commande);
+		evenement.notifier("creation", commande);
+		return commande;
+	}
+
+	public Commande recupererCommandeParId(int id) {
+		return commandeRepository.findById(id).orElse(null);
+	}
+
+	public void supprimerCommande(Commande commande) {
+		commandeRepository.delete(commande);
+	}
 }
