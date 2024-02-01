@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.company.project.entity.Commande;
 import com.company.project.entity.Notification;
-import com.company.project.repository.CommandeRepository;
 import com.company.project.repository.NotificationRepository;
 import com.company.project.service.observateur.EventListener;
 import com.company.project.service.observateur.EventManager;
