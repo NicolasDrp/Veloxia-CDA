@@ -20,6 +20,9 @@ public class ModeleService {
     public List<Modele> recupererModeles(){
         return modeleRepository.findAll();
     }
+    public Modele recupererModeleParId(int id){
+        return modeleRepository.findById(id).orElse(null);
+    }
     public void supprimerModele(Modele modele){
         modeleRepository.delete(modele);
     }
