@@ -11,13 +11,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Commande")
+@Table(name = "commande")
 public class Commande {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_commande", nullable = false)
-	private Long idCommande;
+	private int idCommande;
 
 	@Column(name = "status", nullable = false)
 	private String status;
@@ -41,11 +41,11 @@ public class Commande {
 		super();
 	}
 
-	public Long getIdCommande() {
+	public int getIdCommande() {
 		return idCommande;
 	}
 
-	public void setIdCommande(Long idCommande) {
+	public void setIdCommande(int idCommande) {
 		this.idCommande = idCommande;
 	}
 

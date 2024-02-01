@@ -12,13 +12,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Notification")
+@Table(name = "notification")
 public class Notification {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_notification", nullable = false)
-	private Long idNotification;
+	private int idNotification;
 
 	@Column(name = "message", nullable = false)
 	private String message;
@@ -34,11 +34,11 @@ public class Notification {
 		super();
 	}
 
-	public Long getIdNotification() {
+	public int getIdNotification() {
 		return idNotification;
 	}
 
-	public void setIdNotification(Long idNotification) {
+	public void setIdNotification(int idNotification) {
 		this.idNotification = idNotification;
 	}
 

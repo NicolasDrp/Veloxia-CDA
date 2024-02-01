@@ -12,14 +12,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Voiture")
+@Table(name = "voiture")
 public class Voiture implements Vehicule {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_voiture", nullable = false)
-    private Long idVoiture;
+    private int idVoiture;
 
     @Column(name = "couleur_voiture", nullable = false)
     private String couleurVoiture;
@@ -35,11 +35,11 @@ public class Voiture implements Vehicule {
         super();
     }
 
-    public Long getIdVoiture() {
+    public int getIdVoiture() {
         return idVoiture;
     }
 
-    public void setIdVoiture(Long idVoiture) {
+    public void setIdVoiture(int idVoiture) {
         this.idVoiture = idVoiture;
     }
 
