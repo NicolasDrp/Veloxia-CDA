@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Concessionnaire")
+@Table(name = "concessionnaire")
 public class Concessionnaire {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_concessionnaire",nullable = false)
-    private Long idConcessionnaire;
+    private int idConcessionnaire;
 	
 	@Column(name =  "nom_concessionnaire",nullable = false)
 	private String nomConcessionnaire;
@@ -38,11 +38,11 @@ public class Concessionnaire {
 		super();
 	}
 
-	public Long getIdConcessionnaire() {
+	public int getIdConcessionnaire() {
 		return idConcessionnaire;
 	}
 
-	public void setIdConcessionnaire(Long idConcessionnaire) {
+	public void setIdConcessionnaire(int idConcessionnaire) {
 		this.idConcessionnaire = idConcessionnaire;
 	}
 

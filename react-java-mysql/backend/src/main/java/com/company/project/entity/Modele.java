@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Modele")
+@Table(name = "modele")
 public class Modele {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_modele", nullable = false)
-    private Long idModele;
+    private int idModele;
 
     @Column(name = "nom_modele", nullable = false)
     private String nomModele;
@@ -32,11 +32,11 @@ public class Modele {
         super();
     }
 
-    public Long getIdModele() {
+    public int getIdModele() {
         return idModele;
     }
 
-    public void setIdModele(Long idModele) {
+    public void setIdModele(int idModele) {
         this.idModele = idModele;
     }
 
