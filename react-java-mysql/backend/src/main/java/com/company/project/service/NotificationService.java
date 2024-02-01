@@ -44,4 +44,8 @@ public class NotificationService implements EventListener {
 		return notificationRepository.findById(id).orElse(null);
 	}
 
+	public void supprimerNotification(Notification notification) {
+		notificationRepository.delete(notification);
+	}
+
 }
