@@ -25,9 +25,6 @@ public class Modele {
     @Column(name = "prix_modele", nullable = false)
     private int prixModele;
 
-    @Column(name = "email_utilisateur", nullable = false)
-    private String email_utilisateur;
-
     public Modele() {
         super();
     }
@@ -62,14 +59,6 @@ public class Modele {
 
     public void setPrixModele(int prixModele) {
         this.prixModele = prixModele;
-    }
-
-    public String getEmail_utilisateur() {
-        return email_utilisateur;
-    }
-
-    public void setEmail_utilisateur(String email_utilisateur) {
-        this.email_utilisateur = email_utilisateur;
     }
 
 }
