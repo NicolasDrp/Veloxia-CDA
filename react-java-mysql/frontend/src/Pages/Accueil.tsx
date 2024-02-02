@@ -8,48 +8,27 @@ interface Utilisateur {
   prenomUtilisateur: string;
   nomUtilisateur: string;
   emailUtilisateur: string;
-  // Ajoutez d'autres champs si nécessaire
 }
 
 const Accueil: React.FC = () => {
-  // État pour stocker les données de l'utilisateur
-  const [utilisateur, setUtilisateur] = useState<Utilisateur | null>(null);
 
-  // Utilisation de useEffect pour effectuer la requête lors du montage du composant
-  useEffect(() => {
-    const fetchUtilisateur = async () => {
-      try {
-        // Faites la requête pour récupérer l'utilisateur avec l'id 1
-        const response = await axios.get<Utilisateur>("http://localhost:3000/api/utilisateur?id=1");
-
-        // Mettez à jour l'état avec les données de l'utilisateur
-        setUtilisateur(response.data);
-      } catch (error) {
-        console.error("Erreur lors de la récupération de l'utilisateur :", error);
-      }
-    };
-
-    // Appelez la fonction pour effectuer la requête
-    fetchUtilisateur();
-  }, []); // Les crochets vides indiquent que cette fonction s'exécute uniquement une fois lors du montage du composant
-
-  // Affichez les données de l'utilisateur
   return (
 
-    <div>
-      <h1>Accueil</h1>
-      {utilisateur ? (
-        <div>
-          <p>ID Utilisateur: {utilisateur.idUtilisateur}</p>
-          <p>Prénom: {utilisateur.prenomUtilisateur}</p>
-          <p>Nom: {utilisateur.nomUtilisateur}</p>
-          <p>Email: {utilisateur.emailUtilisateur}</p>
-          {/* Ajoutez d'autres champs si nécessaire */}
+    <div className="relative h-screen">
+            <div className="absolute inset-0">
+                <img
+                    className="object-cover w-full h-full"
+                    src={image1}
+                    alt="Nom de la voiture"
+                />
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="text-white text-4xl text-center">Nom de la Voiture</h3>
+            </div>
+            <div className="absolute bottom-8 right-8">
+                <button className="bg-white text-black px-4 py-2 rounded">Voir Voiture</button>
+            </div>
         </div>
-      ) : (
-        <p>Chargement en cours...</p>
-      )}
-    </div>
   );
 };
 
