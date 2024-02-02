@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import '../index.css';
 interface Utilisateur {
   idUtilisateur: number;
   prenomUtilisateur: string;
@@ -42,6 +42,7 @@ const Accueil: React.FC = () => {
           <p>Nom: {utilisateur.nomUtilisateur}</p>
           <p>Email: {utilisateur.emailUtilisateur}</p>
           {/* Ajoutez d'autres champs si nécessaire */}
+        <p className="line-through ...">xcxcxcxcbcfgnfbfdvdsvdvsscdfsq</p>
         </div>
       ) : (
         <p>Chargement en cours...</p>
