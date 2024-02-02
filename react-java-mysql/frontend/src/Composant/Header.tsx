@@ -8,7 +8,7 @@ const Header = () => {
             <img src={Logo} alt=""/>
             <button
                 className="bg-gray-900 hover:bg-gray-950 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button">
+                type="button" style={{ userSelect: 'none' }}>
                 Connexion
             </button>
         </header>
