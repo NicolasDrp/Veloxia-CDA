@@ -40,16 +40,11 @@ const Accueil: React.FC = () => {
       <h1>Accueil</h1>
       {utilisateur ? (
         <div>
-            <img src={image1} alt=""/>
-            <img src={logo} alt=""/>
           <p>ID Utilisateur: {utilisateur.idUtilisateur}</p>
           <p>Prénom: {utilisateur.prenomUtilisateur}</p>
           <p>Nom: {utilisateur.nomUtilisateur}</p>
           <p>Email: {utilisateur.emailUtilisateur}</p>
           {/* Ajoutez d'autres champs si nécessaire */}
-        <p className="line-through ...">xcxcxcxcbcfgnfbfdvdsvdvsscdfsq</p>
-
-
         </div>
       ) : (
         <p>Chargement en cours...</p>

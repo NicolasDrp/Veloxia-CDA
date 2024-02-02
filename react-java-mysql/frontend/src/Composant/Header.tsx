@@ -4,9 +4,13 @@ import Logo from '../image/veloxia.png';
 
 const Header = () => {
     return (
-        <header className={"flex"}>
+        <header className={"flex justify-between items-center pl-10 pr-10"}>
             <img src={Logo} alt=""/>
-            <button className={""}>Sarah le caca</button>
+            <button
+                className="bg-gray-900 hover:bg-gray-950 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button">
+                Connexion
+            </button>
         </header>
     );
 };
