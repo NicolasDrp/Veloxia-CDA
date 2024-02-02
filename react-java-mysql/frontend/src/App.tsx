@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Accueil from "./Pages/Accueil";
 import Test from "./Pages/Test";
 import Header from "./Composant/Header";
+import Connexion from "./Pages/Connexion";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route element={<Accueil />} path={'/'} />
           <Route element={<Test />} path={'/test'} />
+          <Route element={<Connexion />} path={'/connexion'} />
         </Routes>
       </BrowserRouter>
     </>
