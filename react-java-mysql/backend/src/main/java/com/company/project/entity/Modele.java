@@ -11,65 +11,65 @@ import javax.persistence.Table;
 @Table(name = "modele")
 public class Modele {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_modele", nullable = false)
-    private int idModele;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_modele", nullable = false)
+	private int idModele;
 
-    @Column(name = "nom_modele", nullable = false)
-    private String nomModele;
+	@Column(name = "nom_modele", nullable = false)
+	private String nomModele;
 
-    @Column(name = "portes", nullable = false)
-    private int portes;
+	@Column(name = "description_modele", nullable = false)
+	private String descriptionModele;
 
-    @Column(name = "prix_modele", nullable = false)
-    private int prixModele;
+	@Column(name = "portes", nullable = false)
+	private int portes;
 
-    @Column(name = "email_utilisateur", nullable = false)
-    private String email_utilisateur;
+	@Column(name = "prix_modele", nullable = false)
+	private int prixModele;
 
-    public Modele() {
-        super();
-    }
+	public Modele() {
+		super();
+	}
 
-    public int getIdModele() {
-        return idModele;
-    }
+	public int getIdModele() {
+		return idModele;
+	}
 
-    public void setIdModele(int idModele) {
-        this.idModele = idModele;
-    }
+	public void setIdModele(int idModele) {
+		this.idModele = idModele;
+	}
 
-    public String getNomModele() {
-        return nomModele;
-    }
+	public String getNomModele() {
+		return nomModele;
+	}
 
-    public void setNomModele(String nomModele) {
-        this.nomModele = nomModele;
-    }
+	public void setNomModele(String nomModele) {
+		this.nomModele = nomModele;
+	}
 
-    public int getPortes() {
-        return portes;
-    }
+	public String getDescriptionModele() {
+		return descriptionModele;
+	}
 
-    public void setPortes(int portes) {
-        this.portes = portes;
-    }
+	public void setDescriptionModele(String descriptionModele) {
+		this.descriptionModele = descriptionModele;
+	}
 
-    public int getPrixModele() {
-        return prixModele;
-    }
+	public int getPortes() {
+		return portes;
+	}
 
-    public void setPrixModele(int prixModele) {
-        this.prixModele = prixModele;
-    }
+	public void setPortes(int portes) {
+		this.portes = portes;
+	}
 
-    public String getEmail_utilisateur() {
-        return email_utilisateur;
-    }
+	public int getPrixModele() {
+		return prixModele;
+	}
 
-    public void setEmail_utilisateur(String email_utilisateur) {
-        this.email_utilisateur = email_utilisateur;
-    }
+	public void setPrixModele(int prixModele) {
+		this.prixModele = prixModele;
+	}
 
 }
