@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS utilisateur (
 -- Création de la table `modele`
 CREATE TABLE IF NOT EXISTS modele (
     id_modele INT AUTO_INCREMENT PRIMARY KEY,
+    description_modele TEXT NOT NULL,
     nom_modele VARCHAR(50) NOT NULL,
     portes INT NOT NULL,
     prix_modele INT NOT NULL
