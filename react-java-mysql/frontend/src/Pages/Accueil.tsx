@@ -84,7 +84,7 @@ const Accueil: React.FC = () => {
         </div>
       </div>
       <div className="absolute bottom-40 right-24">
-        <a href="/Voiture">
+        <a href={`/Voiture/${infoModele[indexModele]?.idModele}`}>
           <button className="bg-[#FAFAFA] text-black px-24 py-6 rounded text-3xl font-semibold" style={{ userSelect: 'none' }}>
             Voir véhicule
           </button>
