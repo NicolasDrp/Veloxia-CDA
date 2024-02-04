@@ -24,9 +24,6 @@ public class Voiture implements Vehicule {
     @Column(name = "couleur_voiture", nullable = false)
     private String couleurVoiture;
 
-    @Column(name = "nom_utilisateur", nullable = false)
-    private String nomUtilisateur;
-
     @ManyToOne
     @JoinColumn(name = "id_modele", nullable = false)
     private Modele modele;
@@ -49,14 +46,6 @@ public class Voiture implements Vehicule {
 
     public void setCouleurVoiture(String couleurVoiture) {
         this.couleurVoiture = couleurVoiture;
-    }
-
-    public String getNomUtilisateur() {
-        return nomUtilisateur;
-    }
-
-    public void setNomUtilisateur(String nomUtilisateur) {
-        this.nomUtilisateur = nomUtilisateur;
     }
 
     public Modele getModele() {
