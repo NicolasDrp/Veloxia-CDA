@@ -17,10 +17,9 @@ public class VoitureService {
     }
     public Voiture creerVoiture(Voiture voiture) {
         voitureRepository.save(voiture);
-
         return voiture;
     }
-    public Voiture recupererVoitureId(int id){
+    public Voiture recupererVoitureParId(int id){
         return voitureRepository.findById(id).orElse(null);
     }
     public void supprimerVoiture(Voiture voiture){

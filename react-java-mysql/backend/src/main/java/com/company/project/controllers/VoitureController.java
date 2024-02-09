@@ -14,7 +14,7 @@ public class VoitureController {
   private VoitureService voitureService;
     @GetMapping("/voiture")
     public Voiture recupererVoitureId(int id){
-        return voitureService.recupererVoitureId(id);
+        return voitureService.recupererVoitureParId(id);
     }
     @PostMapping("/voiture")
     public Voiture creerVoiture (Voiture voiture){
