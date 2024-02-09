@@ -13,7 +13,7 @@ public class VoitureController {
     @Autowired
   private VoitureService voitureService;
     @GetMapping("/voiture")
-    public Voiture recupererVoitureId(int id){
+    public Voiture recupererVoitureParId(int id){
         return voitureService.recupererVoitureParId(id);
     }
     @PostMapping("/voiture")
