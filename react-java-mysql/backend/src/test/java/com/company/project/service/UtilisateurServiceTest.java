@@ -25,16 +25,16 @@ public class UtilisateurServiceTest {
 	@InjectMocks
 	UtilisateurService service;
 
+	Utilisateur utilisateur = new Utilisateur();
+	
 	@Test
 	void testCreerUtilisateur() {
-		Utilisateur utilisateur = new Utilisateur();
 		service.creerUtilisateur(utilisateur);
 		verify(repository, times(1)).save(utilisateur);
 	}
 
 	@Test
 	void testRecupererUtilisateurParId() {
-		Utilisateur utilisateur = new Utilisateur();
 		when(repository.findById(anyInt())).thenReturn(Optional.of(utilisateur));
 		service.recupererUtilisateurParId(1);
 		verify(repository, times(1)).findById(1);
@@ -48,7 +48,6 @@ public class UtilisateurServiceTest {
 
 	@Test
 	void testSupprimerUtilisateur() {
-		Utilisateur utilisateur = new Utilisateur();
 		service.supprimerUtilisateur(utilisateur);
 		verify(repository, times(1)).delete(utilisateur);
 	}

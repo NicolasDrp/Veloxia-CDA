@@ -24,26 +24,25 @@ public class CommandeServiceTest {
 
 	@InjectMocks
 	CommandeService service;
+	
+	Commande commande = new Commande();
 
 	@Test
 	void testCreerCommande() {
-		Commande Commande = new Commande();
-		service.creerCommande(Commande);
-		verify(repository, times(1)).save(Commande);
+		service.creerCommande(commande);
+		verify(repository, times(1)).save(commande);
 	}
 
 	@Test
 	void testRecupererCommandeParId() {
-		Commande Commande = new Commande();
-		when(repository.findById(anyInt())).thenReturn(Optional.of(Commande));
+		when(repository.findById(anyInt())).thenReturn(Optional.of(commande));
 		service.recupererCommandeParId(1);
 		verify(repository, times(1)).findById(1);
 	}
 
 	@Test
 	void testSupprimerCommande() {
-		Commande Commande = new Commande();
-		service.supprimerCommande(Commande);
-		verify(repository, times(1)).delete(Commande);
+		service.supprimerCommande(commande);
+		verify(repository, times(1)).delete(commande);
 	}
 }

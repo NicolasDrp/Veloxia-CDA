@@ -25,16 +25,16 @@ public class ModeleServiceTest {
 	@InjectMocks
 	ModeleService service;
 
+	Modele Modele = new Modele();
+	
 	@Test
 	void testCreerModele() {
-		Modele Modele = new Modele();
 		service.creerModele(Modele);
 		verify(repository, times(1)).save(Modele);
 	}
 
 	@Test
 	void testRecupererModeleParId() {
-		Modele Modele = new Modele();
 		when(repository.findById(anyInt())).thenReturn(Optional.of(Modele));
 		service.recupererModeleParId(1);
 		verify(repository, times(1)).findById(1);
@@ -48,7 +48,6 @@ public class ModeleServiceTest {
 
 	@Test
 	void testSupprimerModele() {
-		Modele Modele = new Modele();
 		service.supprimerModele(Modele);
 		verify(repository, times(1)).delete(Modele);
 	}

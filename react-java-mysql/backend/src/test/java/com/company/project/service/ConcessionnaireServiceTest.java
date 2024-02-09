@@ -24,17 +24,17 @@ public class ConcessionnaireServiceTest {
 
 	@InjectMocks
 	ConcessionnaireService service;
+	
+	Concessionnaire concessionnaire = new Concessionnaire();
 
 	@Test
 	void testCreerConcessionnaire() {
-		Concessionnaire concessionnaire = new Concessionnaire();
 		service.creerConcessionnaire(concessionnaire);
 		verify(repository, times(1)).save(concessionnaire);
 	}
 
 	@Test
 	void testRecupererConcessionnaireParId() {
-		Concessionnaire concessionnaire = new Concessionnaire();
 		when(repository.findById(anyInt())).thenReturn(Optional.of(concessionnaire));
 		service.recupererConcessionnaireParId(1);
 		verify(repository, times(1)).findById(1);
@@ -48,7 +48,6 @@ public class ConcessionnaireServiceTest {
 
 	@Test
 	void testSupprimerConcessionnaire() {
-		Concessionnaire concessionnaire = new Concessionnaire();
 		service.supprimerConcessionnaire(concessionnaire);
 		verify(repository, times(1)).delete(concessionnaire);
 	}

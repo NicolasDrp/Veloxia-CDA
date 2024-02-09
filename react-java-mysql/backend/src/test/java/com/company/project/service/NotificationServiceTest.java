@@ -25,30 +25,28 @@ public class NotificationServiceTest {
 	@InjectMocks
 	NotificationService service;
 
+	Notification notification = new Notification();
+
 	@Test
 	public void majTest() {
-		
 	}
 
 	@Test
 	void testCreerNotification() {
-		Notification Notification = new Notification();
-		service.creerNotification(Notification);
-		verify(repository, times(1)).save(Notification);
+		service.creerNotification(notification);
+		verify(repository, times(1)).save(notification);
 	}
 
 	@Test
 	void testRecupererNotificationParId() {
-		Notification Notification = new Notification();
-		when(repository.findById(anyInt())).thenReturn(Optional.of(Notification));
+		when(repository.findById(anyInt())).thenReturn(Optional.of(notification));
 		service.recupererNotificationParId(1);
 		verify(repository, times(1)).findById(1);
 	}
 
 	@Test
 	void testSupprimerNotification() {
-		Notification Notification = new Notification();
-		service.supprimerNotification(Notification);
-		verify(repository, times(1)).delete(Notification);
+		service.supprimerNotification(notification);
+		verify(repository, times(1)).delete(notification);
 	}
 }

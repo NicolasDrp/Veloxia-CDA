@@ -25,16 +25,16 @@ public class VoitureServiceTest {
 	@InjectMocks
 	VoitureService service;
 
+	Voiture voiture = new Voiture();
+	
 	@Test
 	void testCreerVoiture() {
-		Voiture voiture = new Voiture();
 		service.creerVoiture(voiture);
 		verify(repository, times(1)).save(voiture);
 	}
 
 	@Test
 	void testRecupererVoitureParId() {
-		Voiture voiture = new Voiture();
 		when(repository.findById(anyInt())).thenReturn(Optional.of(voiture));
 		service.recupererVoitureParId(1);
 		verify(repository, times(1)).findById(1);
@@ -42,7 +42,6 @@ public class VoitureServiceTest {
 
 	@Test
 	void testSupprimerVoiture() {
-		Voiture voiture = new Voiture();
 		service.supprimerVoiture(voiture);
 		verify(repository, times(1)).delete(voiture);
 	}
