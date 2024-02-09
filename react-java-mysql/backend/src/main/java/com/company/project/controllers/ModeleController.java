@@ -23,7 +23,7 @@ public class ModeleController {
     }
     @PostMapping("/modele")
     public Modele creerModele (Modele modele){
-        return modeleService.CreerModele(modele);
+        return modeleService.creerModele(modele);
     }
     @DeleteMapping("/modele")
     public void supprimerModele (Modele modele){

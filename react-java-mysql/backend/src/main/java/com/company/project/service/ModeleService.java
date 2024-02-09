@@ -13,7 +13,7 @@ public class ModeleService {
     public ModeleService(ModeleRepository modeleRepository){
         this.modeleRepository = modeleRepository;
     }
-    public Modele CreerModele(Modele modele){
+    public Modele creerModele(Modele modele){
         modeleRepository.save(modele);
         return modele;
     }
