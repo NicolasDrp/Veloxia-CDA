@@ -14,7 +14,7 @@ public class ModeleController {
     @Autowired
     private ModeleService modeleService;
     @GetMapping("/modele")
-    public Modele recupererModeleparId(int id){
+    public Modele recupererModeleParId(int id){
         return modeleService.recupererModeleParId(id);
     }
     @GetMapping("/modeles")
